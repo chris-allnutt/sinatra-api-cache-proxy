@@ -9,6 +9,7 @@ get '/*' do
   
   api_request_path = params[:splat].join('/')
 
+  # iron cache dies horribly if you give it a uri for the cache_key
   cache_key = Digest::MD5.hexdigest(api_request_path)
 
   @client = IronCache::Client.new
