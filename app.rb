@@ -6,7 +6,7 @@ require 'digest/md5'
 
 get '/*' do
   content_type "application/json"
-  
+
   api_request_path = params[:splat].join('/')
 
   # iron cache dies horribly if you give it a uri for the cache_key
